@@ -9,4 +9,3 @@ gem "jekyll-seo-tag", "~> 2.5"
 
 # To silence bundled gems warnings
 gem "logger"
-gem "bigdecimal"
