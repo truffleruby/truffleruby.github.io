@@ -1,7 +1,10 @@
 <nav class="nav">
-  <div class="nav-container">
+  <div class="nav-container" style="height: 2em">
     <a href="{{ site.baseurl }}/">
-      <h2 class="nav-title">{{ site.title }}</h2>
+      <div style="display: flex; justify-content: left; align-items: center;">
+        <img src="{{ "/assets/truffleruby_logo_notext.svg" | relative_url }}" style="height: 2.5em; margin: 0; margin-right: 0.4em;">
+        <h2 class="nav-title" style="">{{ site.title }}</h2>
+      </div>
     </a>
     <ul>
       <li><a href="{{ site.baseurl }}/">Posts</a></li>
