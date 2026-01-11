@@ -5,10 +5,13 @@ layout: default
 <div class="post">
   <div class="post-info">
     <span>Written by</span>
-    {% if page.author %}
-        {{ page.author }}
-    {% else %}
-        {{ site.author.name }}
+    {% if page.authors %}
+    {% for author in page.authors %}
+      {% include author.html %}
+    {% endfor %}
+    {% elsif page.author %}
+    {% assign author = page.author %}
+    {% include author.html %}
     {% endif %}
 
     {% if page.date %}

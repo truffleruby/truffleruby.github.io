@@ -15,6 +15,10 @@
     }
   }
 
+  &-post-link {
+    color: $default-color;
+  }
+
   &-pinned {
     color: $default-tint;
     font-family: $serif-secondary;

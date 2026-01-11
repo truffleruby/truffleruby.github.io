@@ -1,9 +1,19 @@
-{% if post.original_post %}
-  <div class="catalogue-item">
-    <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }} by <a href="https://github.com/{{ post.author | remove_first: '@' }}">{{ post.author }}</a></time>
+<div class="catalogue-item">
+  <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }} by
+    {% if post.authors %}
+    {% for author in post.authors %}
+      {% include author.html %}
+    {% endfor %}
+    {% elsif post.author %}
+    {% assign author = post.author %}
+    {% include author.html %}
+    {% endif %}
+  </time>
+  <a href="{% if post.original_post %}{{ post.original_post }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}" class="catalogue-post-link">
     <h1 class="catalogue-title">{{ post.title }}</h1>
     <div class="catalogue-line"></div>
 
+    {% if post.original_post %}
     <p>
       See <a href="{{ post.original_post }}">the original blog post on
       {% if post.blog_name %}
@@ -13,17 +23,7 @@
       {% endif %}
       </a>
     </p>
-  </div>
-{% else %}
-<a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
-  <div>
-    {% if include.sticky == 'true' %}
-    <span class="catalogue-pinned">Pinned &middot;</span>
-    {% endif %}
-    <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-    <h1 class="catalogue-title">{{ post.title }}</h1>
-    <div class="catalogue-line"></div>
-
+    {% else %}
     <p>
       {% if post.excerpt_separator %}
         {{ post.excerpt | strip_html }}
@@ -31,7 +31,6 @@
         {{ post.content | strip_html | truncatewords: 30 }}
       {% endif %}
     </p>
-
-  </div>
-</a>
-{% endif %}
+    {% endif %}
+  </a>
+</div>
