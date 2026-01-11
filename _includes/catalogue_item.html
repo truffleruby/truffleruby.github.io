@@ -1,11 +1,17 @@
 {% if post.original_post %}
   <div class="catalogue-item">
-    <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+    <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }} by <a href="https://github.com/{{ post.author | remove_first: '@' }}">{{ post.author }}</a></time>
     <h1 class="catalogue-title">{{ post.title }}</h1>
     <div class="catalogue-line"></div>
 
     <p>
-      See <a href="{{ post.original_post }}">the original post on {{ post.author }}'s blog</a>
+      See <a href="{{ post.original_post }}">the original blog post on
+      {% if post.blog_name %}
+      {{ post.blog_name }}
+      {% else %}
+      {{ post.author }}'s blog
+      {% endif %}
+      </a>
     </p>
   </div>
 {% else %}
