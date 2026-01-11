@@ -148,7 +148,8 @@ This is the best possible outcome as TruffleRuby is now a proper open source pro
 * The development happens in the open on GitHub instead of internally inside Oracle, so now anyone can follow the development, participate in discussions, etc.
 * PRs are merged faster thanks to a CI running in 20 minutes in GitHub Actions vs hours before.
 * There is no need for any Contributor License Agreement anymore to contribute to TruffleRuby, you can simply open a PR and that's it.
-* TruffleRuby can be released more frequently, GraalVM was only released every 6 months.
+* TruffleRuby will be released more frequently, GraalVM was only released every 6 months.
+  The release process is now documented and almost fully automated, making it easier and faster to create releases.
 
 This change makes it easier than ever for the community to shape the future of TruffleRuby.
 
