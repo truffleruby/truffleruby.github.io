@@ -29,7 +29,7 @@ plugins:
 
 # Permalinks
 permalink: /blog/:title
-paginate: 5
+paginate: 50
 
 # Excludes
 exclude:

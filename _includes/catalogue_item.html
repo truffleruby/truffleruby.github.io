@@ -1,3 +1,14 @@
+{% if post.original_post %}
+  <div class="catalogue-item">
+    <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+    <h1 class="catalogue-title">{{ post.title }}</h1>
+    <div class="catalogue-line"></div>
+
+    <p>
+      See <a href="{{ post.original_post }}">the original post on {{ post.author }}'s blog</a>
+    </p>
+  </div>
+{% else %}
 <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
   <div>
     {% if include.sticky == 'true' %}
@@ -17,3 +28,4 @@
 
   </div>
 </a>
+{% endif %}
