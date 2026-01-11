@@ -91,6 +91,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.6.4)
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -160,7 +161,6 @@ PLATFORMS
   riscv64-linux-android
   riscv64-linux-gnu
   riscv64-linux-musl
-  ruby
   x86-linux-gnu
   x86-linux-musl
   x86_64-darwin
@@ -172,6 +172,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.4.1)
   jekyll-feed (~> 0.12)
+  logger
   sass-embedded (~> 1.78.0)
   tale
   tzinfo (>= 1, < 3)
