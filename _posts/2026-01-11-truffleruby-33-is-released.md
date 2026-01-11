@@ -19,12 +19,12 @@ There are lots of changes in this release, so let's unpack them one by one.
 
 ## New Versioning
 
-TruffleRuby used to follow a year-based versioning, like the Truffle framework.
+TruffleRuby used to follow a year-based versioning scheme, like the Truffle framework.
 
-Starting with TruffleRuby 33 the TruffleRuby major version now represents the first 2 components of `RUBY_VERSION` that TruffleRuby is compatible with.
+Starting with TruffleRuby 33, the TruffleRuby major version now represents the first 2 components of `RUBY_VERSION` that TruffleRuby is compatible with.
 So TruffleRuby 33 is compatible with Ruby 3.3, TruffleRuby 34 will be compatible with Ruby 3.4, and TruffleRuby 40 with Ruby 4.0.
 This way TruffleRuby is able to follow semantic versioning even though CRuby does not.
-And of course it makes easy to tell which TruffleRuby version is compatible with which Ruby version.
+And of course it makes it easy to tell which TruffleRuby version is compatible with which Ruby version.
 
 ## Thread-Safe Hash
 
@@ -97,7 +97,7 @@ Note that:
 * There is no system dependency: no `libssl`/OpenSSL and no `libyaml` needed!  
   Only `libz` and CA certificates, which `tar` and `curl` already need anyway.
   No need to worry anymore about which OpenSSL version is installed on the system.
-* No need to compile anything, it's only download & extract.
+* No need to compile anything: it's only download & extract.
 * It only takes about 2 seconds!
 
 These released binaries also work as far back as Ubuntu 18.04 and RHEL 8.
@@ -105,8 +105,8 @@ These released binaries also work as far back as Ubuntu 18.04 and RHEL 8.
 ## Simpler to Embed in Java
 
 TruffleRuby can be embedded in Java programs, using the [GraalVM Polyglot API](https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Context.html).
-This was cumbersome so far because the need to recompile the `openssl` and `psych` extensions against the system `libssl` and `libyaml`.
-Now that these system dependencies are gone in TruffleRuby 33, users who embed TruffleRuby do not have to compile anything, they can simply use the TruffleRuby jars from Maven Central and it just works, without any extra effort or complications.
+This was cumbersome so far because of the need to recompile the `openssl` and `psych` extensions against the system `libssl` and `libyaml`.
+Now that these system dependencies are gone in TruffleRuby 33, users who embed TruffleRuby do not have to compile anything: they can simply use the TruffleRuby JARs from Maven Central, and it works without any extra effort or complications.
 
 This feature is particularly useful for Java applications that want to embed Ruby for scripting, configuration, or user-defined extensions.
 Now they can also use native extensions.
@@ -145,8 +145,8 @@ Over the recent years Oracle reduced their investment in Ruby due to shifting fo
 
 The good news is that the repository moved from `oracle/truffleruby` to `truffleruby/truffleruby`.
 This is the best possible outcome as TruffleRuby is now a proper open source project:
-* The development happens in the open on GitHub instead of internally inside Oracle. So now anyone can follow the development, participate in discussions, etc.
-* PRs are merged faster thanks to a CI running in 20min in GitHub Actions vs hours before.
+* The development happens in the open on GitHub instead of internally inside Oracle, so now anyone can follow the development, participate in discussions, etc.
+* PRs are merged faster thanks to a CI running in 20 minutes in GitHub Actions vs hours before.
 * There is no need for any Contributor License Agreement anymore to contribute to TruffleRuby, you can simply open a PR and that's it.
 * TruffleRuby can be released more frequently, GraalVM was only released every 6 months.
 
@@ -154,7 +154,7 @@ This change makes it easier than ever for the community to shape the future of T
 
 TruffleRuby is also the easiest Ruby implementation to contribute to, thanks to having [73% of all core library methods implemented in Ruby](https://gist.github.com/eregon/912e6359e83781c5fa1c638d3768c526)!
 
-Next we are working on Ruby 3.4 support, if you'd like to contribute see [this tracking issue](https://github.com/truffleruby/truffleruby/issues/3883).
+We are currently working on Ruby 3.4 support. If you'd like to contribute, see [this tracking issue](https://github.com/truffleruby/truffleruby/issues/3883).
 
 ## Give it a Try
 
