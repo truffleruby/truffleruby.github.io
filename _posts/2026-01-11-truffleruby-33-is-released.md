@@ -68,7 +68,7 @@ Therefore a `Concurrent::Map` from [concurrent-ruby](https://github.com/ruby-con
 
 ## The Fastest and Easiest Ruby Implementation to Install
 
-With this release, TruffleRuby no longer depend on a system `libssl` and `libyaml`.
+With this release, TruffleRuby no longer depends on a system `libssl` and `libyaml`.
 That means no more compilation needed when installing TruffleRuby.
 As a result, TruffleRuby just became the fastest and easiest Ruby to install:
 
