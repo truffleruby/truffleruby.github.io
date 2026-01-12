@@ -4,7 +4,7 @@ title: "TruffleRuby 33 is Released"
 authors: ["@eregon", "@nirvdrum", "@andrykonchin"]
 ---
 
-TruffleRuby 33.0.0 is released and available [on GitHub](https://github.com/truffleruby/truffleruby/releases/tag/graal-33.0.0), your favorite Ruby installer, and [on Maven Central](https://central.sonatype.com/artifact/dev.truffleruby/truffleruby)!
+TruffleRuby 33.0.0 is released and available [on GitHub](https://github.com/truffleruby/truffleruby/releases/tag/graal-33.0.0), in your favorite Ruby installer, and [on Maven Central](https://central.sonatype.com/artifact/dev.truffleruby/truffleruby)!
 
 ```bash
 $ rbenv install truffleruby-33.0.0
@@ -29,7 +29,7 @@ And of course, it makes it easy to tell which TruffleRuby version is compatible 
 ## Thread-Safe Hash
 
 A key feature of this release is that `Hash` is now thread-safe on TruffleRuby.
-This fixes an entire class of concurrency bugs where Ruby code accesses a `Hash` without synchronization from multiple threads, which notably happens during `bundle install`.
+This fixes an entire class of concurrency bugs where Ruby code accesses a `Hash` from multiple threads without synchronization, which notably happens during `bundle install`.
 Previously, we tried to fix the code in these gems but this time we decided to solve this
 once and for all in TruffleRuby by making `Hash` fully thread-safe!
 
@@ -112,7 +112,7 @@ These released binaries also work as far back as Ubuntu 18.04 and RHEL 8.
 
 TruffleRuby can be embedded in Java programs, using the [GraalVM Polyglot API](https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Context.html).
 This was quite cumbersome in previous TruffleRuby releases because of the need to recompile the `openssl` and `psych` extensions against the system `libssl` and `libyaml`.
-Now that these system dependencies are gone in TruffleRuby 33, users who embed TruffleRuby do not have to compile anything: they can simply use the TruffleRuby JARs from Maven Central, and it works without any extra effort or complications.
+Now these system dependencies are gone in TruffleRuby 33 and users who embed TruffleRuby do not have to compile anything: they can simply use the TruffleRuby JARs from Maven Central, and it works without any extra effort or complications.
 
 This feature is particularly useful for Java applications that want to embed Ruby for scripting, configuration, or user-defined extensions.
 Now they can also use native extensions.
