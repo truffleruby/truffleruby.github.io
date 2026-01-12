@@ -29,14 +29,14 @@ And of course, it makes it easy to tell which TruffleRuby version is compatible 
 ## Thread-Safe Hash
 
 A key feature of this release is that `Hash` is now thread-safe on TruffleRuby.
-This fixes an entire class of concurrency bugs where Ruby code accesses a `Hash` from multiple threads without synchronization, which notably happens during `bundle install`.
+This fixes an entire class of concurrency bugs where Ruby code accesses a `Hash` from multiple threads without synchronization, which notably [happens during `bundle install`](https://github.com/truffleruby/truffleruby/issues/3869).
 Previously, we tried to fix the code in these gems but this time we decided to solve this
 once and for all in TruffleRuby by making `Hash` fully thread-safe!
 
 For context, `Hash` is thread-safe on CRuby due to the GVL.
 TruffleRuby has no GVL and runs threads in parallel, which is great for scalability but presents extra challenges like this one.
 
-Benoit had already implemented a parallel thread-safe `Hash` and wrote [a paper](https://eregon.me/blog/assets/research/thread-safe-collections.pdf) about it as part of his PhD, so we were able to reuse that work.
+[Benoit](https://github.com/eregon) had already implemented a parallel thread-safe `Hash` and wrote [a paper](https://eregon.me/blog/assets/research/thread-safe-collections.pdf) about it as part of his PhD, so we were able to reuse that work.
 This implementation of `Hash` is quite sophisticated: it supports parallel reads (`[]`) and parallel writes (`[]=`) while having zero overhead for `Hash` instances reachable by a single `Thread`.
 The implementation uses a new kind of lock called a *Lightweight Layout Lock*, described in that paper, as well as non-blocking synchronization techniques.
 
@@ -50,23 +50,21 @@ p h.size
 ```
 
 ```
-$ ruby -v repro.rb 1_000
-ruby 4.0.0 (2025-12-25 revision 553f1675f3) +PRISM [x86_64-linux]
+On CRuby 4.0.0:
+$ ruby repro.rb 1_000
 1000
-
-$ ruby -v repro.rb 1_000_000
-ruby 4.0.0 (2025-12-25 revision 553f1675f3) +PRISM [x86_64-linux]
+$ ruby repro.rb 1_000_000
 ...: can't add a new key into hash during iteration (RuntimeError)
 
+On TruffleRuby 33.0.0:
 $ ruby -v repro.rb 1_000_000
-truffleruby 33.0.0 (2026-01-09), like ruby 3.3.7, Oracle GraalVM Native [x86_64-linux]
 1000000
 ```
 
-Note that because `Hash` maintains insertion order, this limits the amount of parallelism on writes due to heavy contention on the last Hash entry.
+Note that because `Hash` maintains insertion order, it limits the amount of parallelism on writes due to heavy contention on the last Hash entry.
 Therefore a `Concurrent::Map` from [concurrent-ruby](https://github.com/ruby-concurrency/concurrent-ruby) is still recommended when accessing a `Hash` from multiple threads, for better write parallelism and because it provides more concurrency-related methods.
 
-## The Fastest and Easiest Ruby Implementation to Install
+## The Fastest and Easiest Ruby to Install
 
 With this release, TruffleRuby no longer depends on a system `libssl` and `libyaml`.
 That means no more compilation needed when installing TruffleRuby.
@@ -114,9 +112,6 @@ TruffleRuby can be embedded in Java programs, using the [GraalVM Polyglot API](h
 This was quite cumbersome in previous TruffleRuby releases because of the need to recompile the `openssl` and `psych` extensions against the system `libssl` and `libyaml`.
 Now these system dependencies are gone in TruffleRuby 33 and users who embed TruffleRuby do not have to compile anything: they can simply use the TruffleRuby JARs from Maven Central, and it works without any extra effort or complications.
 
-This feature is particularly useful for Java applications that want to embed Ruby for scripting, configuration, or user-defined extensions.
-Now they can also use native extensions.
-
 ### New Maven Central Coordinates
 
 TruffleRuby Maven Central coordinates have changed from `org.graalvm.polyglot:ruby` to `dev.truffleruby:truffleruby`.
@@ -152,9 +147,9 @@ Over the recent years Oracle reduced their investment in Ruby due to shifting fo
 The good news is that the repository moved from `oracle/truffleruby` to `truffleruby/truffleruby`.
 This is the best possible outcome as TruffleRuby is now a proper open source project:
 * The development happens in the open on GitHub instead of internally inside Oracle, so now anyone can follow the development, participate in discussions, etc.
-* PRs are merged faster thanks to a CI running in 20 minutes in GitHub Actions vs hours before.
+* PRs are merged faster thanks to a CI running in 20 minutes in GitHub Actions instead of running for hours in the internal CI.
 * There is no need for any Contributor License Agreement anymore to contribute to TruffleRuby; you can simply open a PR and that's it.
-* TruffleRuby will be released more frequently, GraalVM was only released every 6 months.
+* TruffleRuby will be released more frequently, rather than following the GraalVM schedule of one release every 6 months.
   The release process is now documented and almost fully automated, making it easier and faster to create releases.
 * TruffleRuby finally [has its own website](https://truffleruby.dev/) which lists [all blog posts about TruffleRuby](https://truffleruby.dev/) and also [all talks about TruffleRuby](https://truffleruby.dev/talks) since 2014!
 
