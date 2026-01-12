@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TruffleRuby 33 is released"
+title: "TruffleRuby 33 is Released"
 authors: ["@eregon", "@nirvdrum", "@andrykonchin"]
 ---
 
@@ -24,7 +24,7 @@ TruffleRuby used to follow a year-based versioning scheme, like the Truffle fram
 Starting with TruffleRuby 33, the TruffleRuby major version now represents the first 2 components of `RUBY_VERSION` that TruffleRuby is compatible with.
 So TruffleRuby 33 is compatible with Ruby 3.3, TruffleRuby 34 will be compatible with Ruby 3.4, and TruffleRuby 40 with Ruby 4.0.
 This way TruffleRuby is able to follow semantic versioning even though CRuby does not.
-And of course it makes it easy to tell which TruffleRuby version is compatible with which Ruby version.
+And of course, it makes it easy to tell which TruffleRuby version is compatible with which Ruby version.
 
 ## Thread-Safe Hash
 
@@ -36,7 +36,7 @@ once and for all in TruffleRuby by making `Hash` fully thread-safe!
 For context, `Hash` is thread-safe on CRuby due to the GVL.
 TruffleRuby has no GVL and runs threads in parallel, which is great for scalability but presents extra challenges like this one.
 
-Benoit already implemented a parallel thread-safe `Hash` and wrote [a paper](https://eregon.me/blog/assets/research/thread-safe-collections.pdf) about it as part of his PhD, so we were able to reuse that work.
+Benoit had already implemented a parallel thread-safe `Hash` and wrote [a paper](https://eregon.me/blog/assets/research/thread-safe-collections.pdf) about it as part of his PhD, so we were able to reuse that work.
 This implementation of `Hash` is quite sophisticated: it supports parallel reads (`[]`) and parallel writes (`[]=`) while having zero overhead for `Hash` instances reachable by a single `Thread`.
 The implementation uses a new kind of lock called a *Lightweight Layout Lock*, described in that paper, as well as non-blocking synchronization techniques.
 
@@ -90,8 +90,8 @@ $ time curl -L https://github.com/truffleruby/truffleruby/releases/download/graa
 
 <!-- IDEA: asciinema GIF to demo it? -->
 
-That's it, TruffleRuby is installed and ready to use!
-You can for example run `truffleruby-33.0.0-linux-amd64/bin/ruby` to start IRB.
+That's it. TruffleRuby is installed and ready to use!
+You can, for example, run `truffleruby-33.0.0-linux-amd64/bin/ruby` to start IRB.
 
 Note that:
 * There is no system dependency: no `libssl`/OpenSSL and no `libyaml` needed!  
@@ -105,7 +105,7 @@ These released binaries also work as far back as Ubuntu 18.04 and RHEL 8.
 ## Simpler to Embed in Java
 
 TruffleRuby can be embedded in Java programs, using the [GraalVM Polyglot API](https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Context.html).
-This was cumbersome so far because of the need to recompile the `openssl` and `psych` extensions against the system `libssl` and `libyaml`.
+This was quite cumbersome in previous TruffleRuby releases because of the need to recompile the `openssl` and `psych` extensions against the system `libssl` and `libyaml`.
 Now that these system dependencies are gone in TruffleRuby 33, users who embed TruffleRuby do not have to compile anything: they can simply use the TruffleRuby JARs from Maven Central, and it works without any extra effort or complications.
 
 This feature is particularly useful for Java applications that want to embed Ruby for scripting, configuration, or user-defined extensions.
@@ -147,7 +147,7 @@ The good news is that the repository moved from `oracle/truffleruby` to `truffle
 This is the best possible outcome as TruffleRuby is now a proper open source project:
 * The development happens in the open on GitHub instead of internally inside Oracle, so now anyone can follow the development, participate in discussions, etc.
 * PRs are merged faster thanks to a CI running in 20 minutes in GitHub Actions vs hours before.
-* There is no need for any Contributor License Agreement anymore to contribute to TruffleRuby, you can simply open a PR and that's it.
+* There is no need for any Contributor License Agreement anymore to contribute to TruffleRuby; you can simply open a PR and that's it.
 * TruffleRuby will be released more frequently, GraalVM was only released every 6 months.
   The release process is now documented and almost fully automated, making it easier and faster to create releases.
 * TruffleRuby finally [has its own website](https://truffleruby.dev/) which lists [all blog posts about TruffleRuby](https://truffleruby.dev/) and also [all talks about TruffleRuby](https://truffleruby.dev/talks) since 2014!
