@@ -35,3 +35,4 @@ paginate: 50
 exclude:
 - Gemfile
 - Gemfile.lock
+- README.md
