@@ -150,6 +150,7 @@ This is the best possible outcome as TruffleRuby is now a proper open source pro
 * There is no need for any Contributor License Agreement anymore to contribute to TruffleRuby, you can simply open a PR and that's it.
 * TruffleRuby will be released more frequently, GraalVM was only released every 6 months.
   The release process is now documented and almost fully automated, making it easier and faster to create releases.
+* TruffleRuby finally [has its own website](https://truffleruby.dev/) which lists [all blog posts about TruffleRuby](https://truffleruby.dev/) and also [all talks about TruffleRuby](https://truffleruby.dev/talks) since 2014!
 
 This change makes it easier than ever for the community to shape the future of TruffleRuby.
 
