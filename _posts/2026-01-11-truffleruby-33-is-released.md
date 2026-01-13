@@ -82,17 +82,11 @@ TruffleRuby also became the easiest Ruby to install because it only has trivial 
 Therefore you can simply download and extract it with `curl` and `tar` and run it straight away (pick the right URL for your platform from the [GitHub release](https://github.com/truffleruby/truffleruby/releases/tag/graal-33.0.0)):
 
 ```bash
-$ time curl -L https://github.com/truffleruby/truffleruby/releases/download/graal-33.0.0/truffleruby-33.0.0-linux-amd64.tar.gz \
+$ curl -L https://github.com/truffleruby/truffleruby/releases/download/graal-33.0.0/truffleruby-33.0.0-linux-amd64.tar.gz \
   | tar xz && truffleruby-33.0.0-linux-amd64/bin/ruby -v
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  115M  100  115M    0     0  53.1M      0  0:00:02  0:00:02 --:--:-- 58.1M
-truffleruby 33.0.0 (2026-01-09), like ruby 3.3.7, Oracle GraalVM Native [x86_64-linux]
-1.92s user 0.95s system 129% cpu 2.211 total
 ```
 
-<!-- IDEA: asciinema GIF to demo it? -->
+<script src="https://asciinema.org/a/f2yllbGl04sflBAM.js" id="asciicast-f2yllbGl04sflBAM" async="true"></script>
 
 That's it. TruffleRuby is installed and ready to use!
 You can, for example, run `truffleruby-33.0.0-linux-amd64/bin/ruby` to start IRB.
