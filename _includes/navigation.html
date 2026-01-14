@@ -1,11 +1,14 @@
 <nav class="nav">
-  <div class="nav-container" style="height: 2em">
+  <div class="nav-container">
     <a href="{{ site.baseurl }}/">
       <div style="display: flex; justify-content: left; align-items: center;">
-        <img src="{{ "/assets/truffleruby_logo_notext.svg" | relative_url }}" style="height: 2.5em; margin: 0; margin-right: 0.4em;">
-        <h2 class="nav-title" style="">{{ site.title }}</h2>
+        <img src="{{ "/assets/truffleruby_logo_notext.svg" | relative_url }}" style="height: 3.6em; margin: 0; margin-right: 0.4em;">
+        <h2 class="nav-title" style="margin-right: 0.2em;">{{ site.title }}</h2>
+        <p>{{ site.description }}</p>
       </div>
     </a>
+  </div>
+  <div class="nav-container" style="height: 1em;">
     <ul>
       <li><a href="https://github.com/truffleruby/truffleruby/tree/master?tab=readme-ov-file#getting-started" target="_blank">Install</a></li>
       <li><a href="{{ site.baseurl }}/talks">Talks</a></li>
