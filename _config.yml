@@ -1,6 +1,6 @@
 # Site settings
-title: "The TruffleRuby Blog"
-description: "The TruffleRuby Blog"
+title: "TruffleRuby"
+description: "A high-performance Ruby implementation"
 url: "https://truffleruby.dev"
 
 # Google Analytics
