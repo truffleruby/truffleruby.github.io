@@ -4,7 +4,6 @@ title: "TruffleRuby 33 is Released"
 authors: ["@eregon", "@nirvdrum", "@andrykonchin"]
 ---
 
-TruffleRuby is a high-performance implementation of the Ruby programming language.
 TruffleRuby 33.0.0 is released and available [on GitHub](https://github.com/truffleruby/truffleruby/releases/tag/graal-33.0.0), in your favorite Ruby installer, and [on Maven Central](https://central.sonatype.com/artifact/dev.truffleruby/truffleruby)!
 
 ```bash
