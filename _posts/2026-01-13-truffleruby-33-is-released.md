@@ -158,4 +158,4 @@ We are currently working on Ruby 3.4 support. If you'd like to contribute, see [
 Try running your existing application or test suite on TruffleRuby and let us know how it works.
 
 If you find any issue please report it [on GitHub](https://github.com/truffleruby/truffleruby/issues).
-You can also reach us [on Slack](https://www.graalvm.org/slack-invitation/).
+You can also reach us [on Slack](https://www.graalvm.org/slack-invitation/) or [on Bluesky](https://bsky.app/profile/truffleruby.dev).
