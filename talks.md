@@ -7,6 +7,8 @@ title: "Talks related to TruffleRuby"
 
 This page attempts to list all talks related to TruffleRuby that were recorded with good quality.
 
+RubyEvents also has [a nice page listing many talks related to TruffleRuby](https://www.rubyevents.org/topics/truffleruby).
+
 ## Deoptimizing Ruby at RubyConf 2014
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/z-YVygbDHLE?si=4NSys8H8Q2gy4_JI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
