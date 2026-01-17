@@ -1,0 +1,45 @@
+---
+- - Deoptimizing Ruby at RubyConf 2014
+  - z-YVygbDHLE
+- - Fast Metaprogramming with Truffle at RubyKaigi 2015
+  - lRMWwjqbXUo
+- - Ruby’s C Extension Problem and How We're Solving It at RubyConf 2016
+  - YLtjkP9bD_U
+- - A Tale of Two String Representations at RubyKaigi 2016
+  - UQnxukip368
+- - Who reordered my code?! at RubyKaigi 2016
+  - 3FS1xnCEMq0
+- - 'JRuby+Truffle: Why it’s Important to Optimise the Tricky Parts at VMSS 2016'
+  - b1NTaVQPt1E
+- - Efficient and Thread-Safe Objects for Dynamically-Typed Languages at OOPSLA 2016
+  - I2PmKNFSpOU
+- - Improving TruffleRuby’s Startup Time with the SubstrateVM at RubyKaigi 2017
+  - 5Ik2qCTmeN0
+- - Polyglot From The Very Old To The Very New at PolyConf 2017
+  - FPN4IScbE60
+- - Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby at RubyKaigi 2018
+  - mRKjWrNJ8DI
+- - 'Beyond `puts`: TruffleRuby’s Modern Debugger Using Chrome at RubyKaigi 2019'
+  - pe28r1VSBdU
+- - 'TruffleRuby: Wrapping up compatibility for C extensions at RubyKaigi 2019'
+  - R-vInXwpPPg
+- - The TruffleRuby Compilation Pipeline at wroc_love.rb 2019
+  - bf5pQVgux3c
+- - Running Rack and Rails Faster with TruffleRuby at RubyKaigi 2020
+  - 281YdMYRAsk
+- - The Future Shape of Ruby Objects at RubyKaigi 2021
+  - RqwVEw-Rd5c
+- - Just-in-Time Compiling Ruby Regexps on TruffleRuby at RubyConf 2021
+  - Cq-cXtegysQ
+- - A History of Compiling Ruby by Chris Seaton at RubyConf 2021
+  - Zg-1_7ed0hE
+- - Ruby's Core Gem by Chris Seaton at RubyConf 2022
+  - "-iVh_8_J-Uo"
+- - 'Splitting: the Crucial Optimization for Ruby Blocks at RubyConf 2022'
+  - Gn6p4rbbqEY
+- - Call-Target Agnostic Keyword Arguments at CGO Graal Workshop 2022
+  - RVqY1FRUm_8
+- - Rethinking Strings at RubyKaigi 2023
+  - a1xvhB8jndQ
+- - From Interpreting C Extensions to Compiling Them at RubyKaigi 2024
+  - DkSvI43k1Ag
