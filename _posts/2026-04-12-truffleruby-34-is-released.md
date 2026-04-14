@@ -74,6 +74,11 @@ The old implementation had lots of overhead due to very frequent calls between R
 We are also seeing more tooling, such as [IRB](https://github.com/ruby/irb/issues/1024) and RDoc, adopt Prism directly, rather than using Ripper. This is great because `Prism` is [about 2.75x faster than Ripper on CRuby](https://eregon.me/blog/2024/10/27/benchmarking-ruby-parsers.html#parsing-and-not-walking) and has a much better API.
 We think it is time to [consider deprecating `Ripper`](https://bugs.ruby-lang.org/issues/21827).
 
+## TruffleRuby's StringScanner Implementation in the Gem
+
+The pure-Ruby implementation for `StringScanner` on TruffleRuby [is now in the `strscan` gem](https://github.com/ruby/strscan/blob/master/lib/strscan/truffleruby.rb), instead of being part of the standard library.
+This means new methods added in the `strscan` gem will be available on TruffleRuby too when updating the gem.
+
 ## Making Hash Parallel, Thread-Safe and Fast at RubyKaigi
 
 If you are attending RubyKaigi 2026 and would like to hear more about TruffleRuby and interesting optimizations,
