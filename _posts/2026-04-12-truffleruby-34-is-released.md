@@ -47,9 +47,9 @@ To explain it, let's look at the flow for parsing in TruffleRuby:
 
 Once we have a TruffleRuby AST, we can execute it in interpreter, and just-in-time compile it to efficient machine code if called often enough.
 
-TruffleRuby has been using lazy method *translation* for a long time, which makes the 3rd step lazy and means it would lazily translate a method on the first call to that method, from the Prism AST to the TruffleRuby AST.
+TruffleRuby has been *translating* methods lazily for a long time, which makes the 3rd step lazy.
 
-TruffleRuby 34 goes further and uses lazy method *deserialization*, which also makes the 2nd step lazy.
+TruffleRuby 34 goes further and *deserializes* methods lazily too, which makes the 2nd step lazy.
 This optimization reduces parsing time [up to 23%](https://github.com/truffleruby/truffleruby/pull/4182).
 
 In a future release we plan to even make the 1st step lazy and achieve lazy method *parsing*, by caching the Prism serialized format for a given file on disk.
