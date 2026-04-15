@@ -19,7 +19,7 @@ $ rvm install truffleruby
 
 ## Compatibility With Ruby 3.4
 
-TruffleRuby 34.0.0 is compatible with Ruby 3.4 (see [versioning](http://127.0.0.1:4000/blog/truffleruby-33-is-released#new-versioning)).
+TruffleRuby 34.0.0 is compatible with Ruby 3.4 (see [versioning](https://truffleruby.dev/blog/truffleruby-33-is-released#new-versioning)).
 
 In this release, all items in the Ruby 3.4 changelog [have been implemented](https://github.com/truffleruby/truffleruby/issues/3883), including:
 * `it` (`3.times { p it }`)
