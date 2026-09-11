@@ -142,3 +142,10 @@ RubyEvents also has [a nice page listing many talks related to TruffleRuby](http
 <a href="https://www.youtube.com/watch?v=DkSvI43k1Ag" target="_blank">
   <img src="https://i.ytimg.com/vi/DkSvI43k1Ag/maxresdefault.jpg"/>
 </a>
+
+## Making Hash Parallel, Thread-Safe and Fast! at RubyKaigi 2026
+
+<a href="https://www.youtube.com/watch?v=wX_FkKkFWmY" target="_blank">
+  <img src="https://i.ytimg.com/vi/wX_FkKkFWmY/maxresdefault.jpg"/>
+</a>
+
